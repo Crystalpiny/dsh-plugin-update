@@ -4,6 +4,7 @@
 [![PowerShell](https://img.shields.io/badge/PowerShell-5.1%2B%20%7C%207%2B-5391FE?logo=powershell&logoColor=white)](#环境要求)
 [![Platform](https://img.shields.io/badge/platform-Windows-0078D4?logo=windows&logoColor=white)](#环境要求)
 [![GitHub stars](https://img.shields.io/github/stars/Crystalpiny/dsh-plugin-update?style=flat)](https://github.com/Crystalpiny/dsh-plugin-update)
+[![GitHub release](https://img.shields.io/github/v/release/Crystalpiny/dsh-plugin-update?style=flat)](https://github.com/Crystalpiny/dsh-plugin-update/releases)
 
 一个 PowerShell 脚本，把 DSH（DeepSeek Harness）桌面版 profile 里的第三方插件批量升到 npm 上的最新版本。更新前自动备份，出问题可以一键回滚。
 
@@ -41,7 +42,7 @@ git clone https://github.com/Crystalpiny/dsh-plugin-update.git
 cd dsh-plugin-update
 ```
 
-也可以直接下载 ZIP 解压。从浏览器下载的脚本会被 Windows 标记为“来自 Internet”，首次运行前解除锁定：
+不想用 git 的话，到 [Releases](https://github.com/Crystalpiny/dsh-plugin-update/releases) 下载源码包解压即可。从浏览器下载的脚本会被 Windows 标记为“来自 Internet”，首次运行前解除锁定：
 
 ```powershell
 Unblock-File .\Update-DshPlugins.ps1
