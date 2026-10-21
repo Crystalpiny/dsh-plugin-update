@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  syntax:
+    name: PowerShell syntax
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Parse Update-DshPlugins.ps1
+        shell: pwsh
+        run: |
+          $tokens = $null
+          $errors = $null
+          $file = Join-Path $PWD 'Update-DshPlugins.ps1'
+          [System.Management.Automation.Language.Parser]::ParseFile($file, [ref]$tokens, [ref]$errors) | Out-Null
+          if (@($errors).Count -gt 0) {
+            $errors | ForEach-Object {
+              Write-Error ("{0} (line {1})" -f $_.Message, $_.Extent.StartLineNumber)
+            }
+            exit 1
+          }
+          Write-Host 'Syntax OK'

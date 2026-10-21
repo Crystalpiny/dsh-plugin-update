@@ -1,0 +1,16 @@
+# Updater backups (created inside the DSH profile, not this repo)
+.plugin-updates/
+*.log
+
+# OS metadata
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.bak
